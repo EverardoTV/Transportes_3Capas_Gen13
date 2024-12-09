@@ -36,15 +36,15 @@ namespace ViewObjects
         //Por defecto
         public Camiones_VO()
         {
-            ID_Camion = 0;
-            Matricula = "";
-            Tipo_Camion = string.Empty;
-            Marca = "";
-            Modelo = "";
-            Capacidad = 0;
-            Kilometraje = 0;
-            UrlFoto = "";
-            Disponibilidad = true;
+            _ID_Camion = 0;
+            _Matricula = "";
+            _Tipo_Camion = string.Empty;
+            _Marca = "";
+            _Modelo = "";
+            _Capacidad = 0;
+            _Kilometraje = 0;
+            _UrlFoto = "";
+            _Disponibilidad = true;
 
         }
 
@@ -52,15 +52,15 @@ namespace ViewObjects
         //Datarow => Objeto ADO
         public Camiones_VO(DataRow dr)
         {
-            ID_Camion = int.Parse(dr["ID_Camion"].ToString());
-            Matricula = dr["Matricula"].ToString();
-            Tipo_Camion = dr["Tipo_Camion"].ToString();
-            Marca = dr["Marca"].ToString(); 
-            Modelo = dr["Modelo"].ToString(); 
-            Capacidad = int.Parse(dr["Capacidad"].ToString()); 
-            Kilometraje = double.Parse(dr["Kilometraje"].ToString());
-            UrlFoto = dr["UrlFoto"].ToString();
-            Disponibilidad = bool.Parse(dr["Disponibilidad"].ToString()); 
+            _ID_Camion = int.Parse(dr["ID_Camion"].ToString());
+            _Matricula = dr["Matricula"].ToString();
+            _Tipo_Camion = dr["Tipo_Camion"].ToString();
+            _Marca = dr["Marca"].ToString(); 
+            _Modelo = dr["Modelo"].ToString(); 
+            _Capacidad = int.Parse(dr["Capacidad"].ToString()); 
+            _Kilometraje = double.Parse(dr["Kilometraje"].ToString());
+            _UrlFoto = dr["UrlFoto"].ToString();
+            _Disponibilidad = bool.Parse(dr["Disponibilidad"].ToString()); 
         }
     }
 }
