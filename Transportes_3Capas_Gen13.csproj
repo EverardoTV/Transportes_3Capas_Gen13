@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Catalogos\Camiones\ListadodeCamiones.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -192,6 +193,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Catalogos\Camiones\ListadodeCamiones.aspx.cs">
+      <DependentUpon>ListadodeCamiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Camiones\ListadodeCamiones.aspx.designer.cs">
+      <DependentUpon>ListadodeCamiones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +253,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BusinesLogicLayer\BusinesLogicLayer.csproj">
+      <Project>{b6f145e7-c325-4b98-8a91-96a11cb597ba}</Project>
+      <Name>BusinesLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="ViewObjects\ViewObjects.csproj">
+      <Project>{3952eb6d-91e3-4261-99c1-529b66c086e4}</Project>
+      <Name>ViewObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
