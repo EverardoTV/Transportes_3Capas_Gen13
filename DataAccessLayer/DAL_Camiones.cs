@@ -140,5 +140,10 @@ namespace DataAccessLayer
             }
             return salida;
         }
+
+        public static string insert_Camion(Camiones_VO camion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
