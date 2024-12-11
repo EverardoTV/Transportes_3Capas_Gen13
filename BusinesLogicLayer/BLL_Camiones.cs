@@ -14,7 +14,7 @@ namespace BusinesLogicLayer
         //Create
         public static string insert_Camion(Camiones_VO camion)
         {
-            return DAL_Camiones.insert_Camion(camion);
+            return DAL_Camiones.accion_Camion(camion);
 
         }
 

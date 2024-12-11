@@ -15,7 +15,7 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
             //Utilizamos la varibable "IsPostBack" para controlar la primera vez que carga la pagina
             if (!IsPostBack)
             {
-               // cargarGrid();
+               cargarGrid();
             }
         }
 
@@ -30,7 +30,7 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 
         protected void Insertar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("formulariocamiones.aspx");
 
         }
 
@@ -41,7 +41,16 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 
         protected void GVCamiones_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            //Defino si el comando(El click que se detecta) tiene la propiedad "Select"
+            if (e.CommandName == "Select")
+            {
+                //Recupero el indice en funcion de aquel elemento que haya detonado el evento
+                int varIndex = int.Parse(e.CommandArgument.ToString());
+                //Recupero el ID en función del indice que recuperamos anteriormente
+                string id = GVCamiones.DataKeys[varIndex].Values["ID_Camion"].ToString();
+                //Redirecciono al formulario de edicion pasando como parametro el ID
+                Response.Redirect($"formulariocamiones.aspx?Id={id}");
+            }
         }
 
         protected void GVCamiones_RowEditing(object sender, GridViewEditEventArgs e)

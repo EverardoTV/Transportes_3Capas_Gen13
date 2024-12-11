@@ -24,7 +24,7 @@
                 <Columns>
                     <asp:BoundField DataField="ID_Camion" HeaderText="Número de Camión" ItemStyle-Width="50px" ReadOnly="true"/>
 
-                    <asp:BoundField DataField="Matrícula" HeaderText="Matrícua" ItemStyle-Width="85px"/>
+                    <asp:BoundField DataField="Matricula" HeaderText="Matrícua" ItemStyle-Width="85px"/>
 
                     <asp:BoundField DataField="Tipo_Camion" HeaderText="Tipo_Camion" ItemStyle-Width="85px"/>
 

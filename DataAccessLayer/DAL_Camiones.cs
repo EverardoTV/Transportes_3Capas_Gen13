@@ -15,10 +15,10 @@ namespace DataAccessLayer
         {
             string salida = "";
             int respuesta = 0;
-
+             
             try
             {
-                respuesta = metodos_datos.execute_nonQuery("sp_InsertarCamion",
+                respuesta = metodos_datos.execute_nonQuery("SP_InsertarCamion",
                     "@Matricula", camion.Matricula,
                     "@Tipo_Camion", camion.Tipo_Camion,
                     "@Marca", camion.Marca,
@@ -47,10 +47,6 @@ namespace DataAccessLayer
         }
 
 
-
-
-
-
         //Read
         public static List<Camiones_VO> Get_Camiones(params object[] parametros)
         {
@@ -73,6 +69,7 @@ namespace DataAccessLayer
             }
         }
 
+
         //Update
         public static string actualizar_Camion(Camiones_VO camion)
         {
@@ -82,6 +79,7 @@ namespace DataAccessLayer
             try
             {
                 respuesta = metodos_datos.execute_nonQuery("sp_ActualizarCamion",
+                    "@ID_Camion", camion.ID_Camion,
                     "@Matricula", camion.Matricula,
                     "@Tipo_Camion", camion.Tipo_Camion,
                     "@Marca", camion.Marca,
@@ -108,7 +106,6 @@ namespace DataAccessLayer
             }
             return salida;
         }
-
 
 
         //Delete
