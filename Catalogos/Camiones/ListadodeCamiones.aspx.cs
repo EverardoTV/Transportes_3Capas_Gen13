@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinesLogicLayer;
+using Microsoft.Ajax.Utilities;
 
 namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 {
@@ -36,6 +37,28 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 
         protected void GVCamiones_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            //Recupero el ID del renglón adectado
+            int id_camion = int.Parse(GVCamiones.DataKeys[e.RowIndex].Values["ID_Camion"].ToString());
+            //Invoco mi metodo para eliminar mi camion
+            string respuesta = BLL_Camiones.eliminar_Camion(id_camion);
+            //Preparamos el Sweet Alert
+            string titulo, msg, tipo;
+            if (respuesta.ToUpper().Contains("ERROR"))
+            {
+                titulo = "Error";
+                msg = respuesta;
+                tipo = "error";
+            }
+            else
+            {
+                titulo = "Correcto!";
+                msg = respuesta;
+                tipo = "Success";
+            }
+
+            //Sweet alert
+            //recargamos la pagina
+            cargarGrid();
 
         }
 
